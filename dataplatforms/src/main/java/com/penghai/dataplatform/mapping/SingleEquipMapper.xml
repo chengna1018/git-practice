@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.penghai.dataplatform.dao.SingleEquipMapper">
+	<resultMap id="BaseResultMap" type="com.penghai.dataplatform.bo.SingleEquip">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="eid" property="eid" jdbcType="INTEGER" />
+		<result column="ename" property="ename" jdbcType="VARCHAR" />
+		<result column="kn" property="kn" jdbcType="INTEGER" />
+		<result column="max_mohou" property="max_mohou" jdbcType="INTEGER" />
+		<result column="min_mohou" property="min_mohou" jdbcType="INTEGER" />
+		<result column="ejection_stoke" property="ejection_stoke" jdbcType="INTEGER" />
+		<result column="ejection_pressure" property="ejection_pressure" jdbcType="FLOAT" />
+		<result column="picture" property="picture" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="Base_singleList">
+		`id`,eid,ename,kn,ax_mohou,min_mohou,ejection_stoke,ejection_pressure,picture
+	</sql>
+
+	<!-- 根据单个设备ID和设备ID查询所有设备信息 -->
+	<select id="selectSingleEquip" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select * from equipshow where eid=#{eid,jdbcType=INTEGER}
+	</select>
+</mapper>

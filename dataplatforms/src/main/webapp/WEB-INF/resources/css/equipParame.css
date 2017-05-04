@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+
+#table1{
+	width:230px;
+	height:50px;
+    font-size: 25px;
+    text-align:center;
+	margin-top:10px;
+	margin-left:5px;
+	}
+#table{
+	width:300px;
+	height:50px;
+    font-size: 20px;
+	margin-top:10px;
+	
+	}
+.equip_picture{
+	width:320px; 
+	height:300px; 
+	position:absolute; 
+	left:50px; 
+	top:50px
+}
+
+.equip_picture img{
+	width:250px;
+	 height:200px;
+}
+
+#title{
+	margin-left:30px; 
+	margin-bottom:10px;
+	text-align:center;
+	font-family: E7E9EE; 
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.style2{
+	margin-left:30px; 
+	margin-bottom:10px;
+	text-align:center;
+	font-family: E7E9EE; 
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#equip_parameter{
+	width:320px; 
+	height:300px; 
+	position:absolute; 
+	left:50px; 
+	top:350px;
+}
+
+.style3{
+	width:320px;
+	height:300px; 
+	position:absolute; 
+	left:50px; 
+	top:350px;
+}
+
+.style4{
+	position:absolute;
+	 left:340px;
+}
+
+.style4 hr{
+	position:absolute;
+	top:-10px;
+	left:-10px;
+	width:5px; 
+	height:745px; 
+	background:#CCC;
+}
+
+
+
+
+
+	
+
+

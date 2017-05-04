@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.penghai.dataplatform.dao.EquipMapper">
+	<resultMap id="BaseResultMap" type="com.penghai.dataplatform.bo.Equip">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="ename" property="ename" jdbcType="VARCHAR" />
+		<result column="desc" property="desc" jdbcType="VARCHAR" />
+		<result column="picture" property="picture" jdbcType="VARCHAR" />
+		<result column="factoryId" property="factoryId" jdbcType="INTEGER" />
+	</resultMap>
+
+	<sql id="Base_List">
+		`id`,`ename`,`desc`,`picture`
+	</sql>
+	<!-- 根据工厂ID查询所有设备信息 -->
+	<select id="selectEquips" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_List" />
+		from equips
+		where factoryId=#{factoryId,jdbcType=INTEGER}
+		order by id
+
+	</select>
+
+	<!-- 分页查询，每页8个 -->
+	<select id="selectEquipsByPage" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_List" />
+		from equips
+		where factoryId=#{0}
+		order by id
+		limit #{1},8
+	</select>
+</mapper>
